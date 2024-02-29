@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Giveaway</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+      #countdown-container {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      #timer {
+        font-size: 24px;
+        margin-bottom: 20px;
+        display: flex ;align-items: center;justify-content: center;gap: 6px;
+      }
+      #message {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      #phone-image {
+        max-width: 100%;
+        height: auto;
+      }
+      .time {
+background-color: hsl(0, 1%, 31%);
+padding: 8px;border-radius: 8px;
+color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: white;">Phone Giveaway</h1>
+    <style>
+      body {
+        /* background-image: url("https://i.ytimg.com/vi/RCn3igNtd8k/maxresdefault.jpg");
+        background-repeat: no-repeat; */
+        background-color: #0d0d0e;
+background-image: radial-gradient(#29292a 0.8px, #3a3838 0.8px);
+background-size: 16px 16px;
+      }
+      </style>
+   
+   
+   
+   
+    <div id="countdown-container">
+      <img
+        id="phone-image"
+        src="C:\Users\ennyb\Downloads\OIP.jpg"
+        alt="Phone Image"
+      />
+
+      <div id="timer">
+        <p id="hour" class="time"></p>
+        <p style="color: white;">:</p>
+        <p id="minute" class="time"></p>
+        <p style="color: white;">:</p>
+        <p id="second" class="time"></p>
+    </div>
+
+    <div id="message"></div>
+    
+    
+   <script>
+      //  const countDownDate = new Date()etTime();
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      tomorrow.setHours(0);
+      tomorrow.setMinutes(0);
+      tomorrow.setSeconds(0);
+
+      const x = setInterval(function () {
+        const now = new Date().getTime();
+        // now.setHours(0);
+
+        const distance = tomorrow.getTime() - now;
+
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // document.getElementById(
+        //   "timer"
+        // ).innerHTML = `${hours}:${minutes}:${seconds}`;
+
+        document.getElementById("hour").innerHTML = hours.toString().padStart(2,'0')
+        document.getElementById("minute").innerHTML = minutes.toString().padStart(2,'0')
+        document.getElementById("second").innerHTML = seconds.toString().padStart(2,'0')
+
+       
+      }, 1000);
+  
+
+      
+
+
+
+
+
+    
+      
+    </script>
+  </body>
+</html>
